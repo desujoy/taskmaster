@@ -65,7 +65,7 @@ const BaseHtml = ({ children }: elements.Children) => `
     <title>Taskmaster</title>
     <script src="https://unpkg.com/htmx.org@1.9.5"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/hyperscript.org@0.9.11"></script>
+    <script src="https://unpkg.com/hyperscript.org@0.9.11"></script> 
 </head>
 ${children}
 `;
@@ -79,12 +79,19 @@ type Todo = {
 const todos: Todo[] = [
   { id: 1, title: "Task 1", completed: false },
   { id: 2, title: "Task 2", completed: true },
+  { id: 3, title: "Task 3", completed: true },
+  { id: 4, title: "Task 4", completed: false },
+  { id: 5, title: "Task 5", completed: false },
+  
 ];
 
 function TodoItem({ title, completed, id }: Todo) {
+  const textStyle = {
+    textDecoration: completed ? 'line-through text-gray-500 opacity-50' : 'none',
+  };
   return (
     <div class="flex flex-row space-x-3">
-      <p>{title}</p>
+      <p class={textStyle.textDecoration}>{title}</p>
       <input type="checkbox" checked={completed}
       hx-post={`/todos/toggle/${id}`}
       hx-target="closest div"
