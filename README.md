@@ -1,4 +1,6 @@
-# taskmaster
+# Taskmaster
+
+## Simple ToDo List App using Bun, Elysia, Tailwind CSS and HTMX
 
 To install dependencies:
 
