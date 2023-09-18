@@ -1,6 +1,6 @@
 {
   "name": "taskmaster",
-  "module": "index.ts",
+  "module": "index.tsx",
   "type": "module",
   "devDependencies": {
     "bun-types": "latest",
